@@ -19,3 +19,66 @@
     overflow: hidden;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
+
+#topBar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8%;
+    background-color: rgba(0, 0, 0);
+    display: flex;
+}
+/* ...existing code... */
+
+/* added/updated styles */
+#topBar {
+    /* keep positioning but make top bar semi-transparent and align items to the right */
+    background-color: rgba(0, 0, 0, 0.55);
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 12px;
+    box-sizing: border-box;
+}
+
+/* container for the right-side icons */
+#rightGroup {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    height: 100%;
+}
+
+/* icon appearance */
+#rightGroup i {
+    color: #ffffff;
+    font-size: 1.15rem;
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 120ms ease, transform 120ms ease, color 120ms ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* hover / active states */
+#rightGroup i:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+}
+#rightGroup i:active {
+    transform: translateY(0);
+}
+
+/* slightly different accent for gear to indicate settings */
+#rightGroup .fa-gear { opacity: 0.95; }
+
+/* responsive adjustments */
+@media (max-width: 720px) {
+    #display-box { width: 95%; height: 85%; font-size: 0.95rem; }
+    #topBar { height: 9%; padding: 0 8px; }
+    #rightGroup i { width: 32px; height: 32px; font-size: 1rem; }
+}
