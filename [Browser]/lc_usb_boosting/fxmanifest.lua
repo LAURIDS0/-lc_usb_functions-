@@ -2,10 +2,13 @@ fx_version 'cerulean'
 game 'gta5'
 lua54 'yes'
 author 'LC Development'
-description 'Browser usb handler for lc_tablet.'
+description 'Boosting usb handler for lc_tablet.'
 version '1.0.0'
 
-ui_page 'html/index.html'
+shared_scripts {
+    '@ox_lib/init.lua',
+    'config.lua'
+}
 
 client_scripts {
     'client.lua',
@@ -13,6 +16,10 @@ client_scripts {
 
 server_scripts {
     'server.lua'
+}
+
+optional_dependencies {
+    'ox_lib'
 }
 
 files {
